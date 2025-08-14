@@ -145,31 +145,9 @@ The portfolio is fully responsive and optimized for:
 - Tablet (768px - 1023px)
 - Mobile (320px - 767px)
 
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Deploy with one click
-
-### Netlify
-
-1. Build the project: `pnpm build`
-2. Upload the `out` folder to Netlify
-3. Configure redirects if needed
-
-### Other Platforms
-
-The portfolio can be deployed to any platform that supports Node.js applications.
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues).
 
 ## 📞 Contact
 
