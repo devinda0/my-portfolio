@@ -65,11 +65,11 @@ export function HeroSection() {
 
           <h2 className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 sm:mb-8 font-medium animate-fade-in-up animate-delay-400">
             <span className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-success)] bg-clip-text text-transparent">
-              Software Engineer
+              Computer Science & Engineering
             </span>{" "}
-            &{" "}
+            {" "}
             <span className="bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-warning)] bg-clip-text text-transparent">
-              Innovator
+              Student
             </span>
           </h2>
 
