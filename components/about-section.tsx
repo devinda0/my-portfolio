@@ -1,9 +1,8 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { GraduationCap, Award, Users, Code } from "lucide-react"
+import { GraduationCap, Users, Code } from "lucide-react"
 import { useEffect, useState } from "react"
-import { FaBook, FaChartLine, FaGears } from "react-icons/fa6"
 
 export function AboutSection() {
   const [isVisible, setIsVisible] = useState(false)
@@ -33,6 +32,8 @@ export function AboutSection() {
       description: "BSc Engineering (Honours) in Computer Science & Engineering at University of Moratuwa",
       color: "from-[var(--color-primary)] to-[var(--color-accent)]",
       bgColor: "bg-gradient-to-br from-primary/10 to-accent/10",
+      iconColor: "text-primary",
+      hoverIconColor: "group-hover:text-accent",
     },
     {
       icon: Users,
@@ -40,6 +41,8 @@ export function AboutSection() {
       description: "Assistant Head of Web & Tech Pillar at MoraSpirit, mentoring teams and leading projects",
       color: "from-[var(--color-success)] to-[var(--color-primary)]",
       bgColor: "bg-gradient-to-br from-[var(--color-success)]/10 to-primary/10",
+      iconColor: "text-[var(--color-success)]",
+      hoverIconColor: "group-hover:text-primary",
     },
     {
       icon: Code,
@@ -47,13 +50,8 @@ export function AboutSection() {
       description: "Full-stack developer with expertise in modern web technologies and machine learning",
       color: "from-[var(--color-accent)] to-[var(--color-warning)]",
       bgColor: "bg-gradient-to-br from-accent/10 to-[var(--color-warning)]/10",
-    },
-    {
-      icon: Award,
-      title: "Achievement",
-      description: "3 'A' passes in A-Levels and active participation in national coding competitions",
-      color: "from-[var(--color-warning)] to-[var(--color-success)]",
-      bgColor: "bg-gradient-to-br from-[var(--color-warning)]/10 to-[var(--color-success)]/10",
+      iconColor: "text-accent",
+      hoverIconColor: "group-hover:text-[var(--color-warning)]",
     },
   ]
 
@@ -120,35 +118,35 @@ export function AboutSection() {
         </div>
 
         {/* Enhanced highlight cards with staggered animations */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {highlights.map((highlight, index) => (
             <Card
               key={index}
-              className={`group hover-lift glass border-0 transition-all duration-500 card-enhanced card-glow ${
+              className={`group hover-lift transition-all duration-500 card-enhanced hover:shadow-lg hover:shadow-primary/5 border border-border/50 hover:border-primary/30 bg-card/50 hover:bg-card/80 backdrop-blur-sm ${
                 isVisible ? "animate-scale-in" : "opacity-0"
               }`}
               style={{ animationDelay: `${(index + 3) * 0.1}s` }}
             >
               <CardContent className="p-6 text-center relative overflow-hidden">
-                {/* Background gradient */}
+                {/* Subtle background gradient that appears on hover */}
                 <div
-                  className={`absolute inset-0 ${highlight.bgColor} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}
+                  className={`absolute inset-0 ${highlight.bgColor} opacity-0 group-hover:opacity-20 transition-all duration-300`}
                 ></div>
 
                 <div className="relative z-10">
                   <div className="mb-4 flex justify-center">
                     <div
-                      className={`p-3 rounded-full group-hover:scale-110 transition-all duration-300 ${highlight.bgColor}`}
+                      className={`p-3 rounded-full group-hover:scale-110 transition-all duration-300 ${highlight.bgColor} group-hover:shadow-lg`}
                     >
                       <highlight.icon
-                        className={`h-6 w-6 bg-gradient-to-r ${highlight.color} bg-clip-text text-transparent`}
+                        className={`h-6 w-6 ${highlight.iconColor} ${highlight.hoverIconColor} transition-colors duration-300`}
                       />
                     </div>
                   </div>
-                  <h4 className="font-semibold mb-2 group-hover:text-primary transition-colors duration-300">
+                  <h4 className="font-semibold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
                     {highlight.title}
                   </h4>
-                  <p className="text-sm text-muted-foreground group-hover:text-foreground/80 transition-colors duration-300">
+                  <p className="text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">
                     {highlight.description}
                   </p>
                 </div>

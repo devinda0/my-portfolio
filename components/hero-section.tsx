@@ -93,7 +93,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animate-delay-600">
             <Button
               size="lg"
-              className="group bg-gradient-primary hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300"
+              className="group bg-gradient-primary hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300 cursor-pointer"
               onClick={handleScrollToProjects}
             >
               <span className="flex items-center">
@@ -105,7 +105,7 @@ export function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="group glass hover:bg-gradient-accent hover:text-white hover:border-transparent hover:scale-105 transition-all duration-300 bg-transparent"
+                className="group glass hover:bg-gradient-accent hover:text-foreground hover:border-transparent hover:scale-105 transition-all duration-300 bg-transparent cursor-pointer"
               >
                   <Download className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
                   Download CV
