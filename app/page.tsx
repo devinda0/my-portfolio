@@ -86,7 +86,7 @@ export default function Home() {
       <PortfolioSchema
         name="Devinda Dilshan Portfolio"
         description="Computer Science & Engineering student portfolio showcasing software engineering projects and technical skills"
-        url="https://your-portfolio-domain.com"
+        url="https://devinda-dilshan.dev"
         author="Devinda Dilshan"
         skills={skills}
         projects={projects}

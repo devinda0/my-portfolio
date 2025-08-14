@@ -4,15 +4,14 @@
 
 export const seoConfig = {
   siteName: "Devinda Dilshan Portfolio",
-  siteUrl: "https://your-portfolio-domain.com", // Replace with your actual domain
+  siteUrl: "https://devinda-dilshan.dev", 
   author: "Devinda Dilshan",
   defaultTitle: "Devinda Dilshan - Software Engineer & Computer Science Student",
   defaultDescription: "Computer Science & Engineering undergraduate at University of Moratuwa. Skilled in Full-Stack Development, Machine Learning, and modern web technologies.",
   social: {
-    twitter: "@your_twitter_handle", // Replace with your Twitter handle
-    linkedin: "https://linkedin.com/in/your-profile", // Replace with your LinkedIn
-    github: "https://github.com/your-username", // Replace with your GitHub
-    email: "your.email@example.com" // Replace with your email
+    linkedin: "https://linkedin.com/in/devinda-dilshan", 
+    github: "https://github.com/devinda0", 
+    email: "devindadilshan0@gmail.com" 
   }
 };
 
