@@ -120,11 +120,11 @@ export function AboutSection() {
         </div>
 
         {/* Enhanced highlight cards with staggered animations */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {highlights.map((highlight, index) => (
             <Card
               key={index}
-              className={`group hover-lift glass border-0 transition-all duration-500 ${
+              className={`group hover-lift glass border-0 transition-all duration-500 card-enhanced card-glow ${
                 isVisible ? "animate-scale-in" : "opacity-0"
               }`}
               style={{ animationDelay: `${(index + 3) * 0.1}s` }}

@@ -60,7 +60,7 @@ export function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="py-20 bg-muted/30" data-section="projects">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
@@ -70,11 +70,11 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-12">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden"
+              className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden card-enhanced card-glow card-shimmer card-depth"
             >
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
@@ -101,7 +101,7 @@ export function ProjectsSection() {
 
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <Badge key={tech} variant="secondary" className="text-xs">
+                    <Badge key={tech} variant="secondary" className="text-xs badge-enhanced">
                       {tech}
                     </Badge>
                   ))}

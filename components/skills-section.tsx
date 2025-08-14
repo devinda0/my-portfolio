@@ -33,7 +33,7 @@ export function SkillsSection() {
   ]
 
   return (
-    <section id="skills" className="py-20">
+    <section id="skills" className="py-20" data-section="skills">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Technical Skills</h2>
@@ -42,9 +42,9 @@ export function SkillsSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-10">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 card-enhanced card-glow card-shimmer card-depth">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3">
                   <div className={`p-2 rounded-lg ${category.color}`}>
@@ -59,7 +59,7 @@ export function SkillsSection() {
                     <Badge
                       key={skill}
                       variant="secondary"
-                      className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+                      className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default badge-enhanced"
                     >
                       {skill}
                     </Badge>
@@ -73,20 +73,20 @@ export function SkillsSection() {
         {/* Additional Achievements */}
         <div className="mt-16">
           <h3 className="font-serif text-2xl font-bold text-center mb-8">Competitions & Volunteering</h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="text-center hover:shadow-lg transition-all duration-300 card-enhanced card-shimmer">
               <CardContent className="p-6">
                 <h4 className="font-semibold mb-2">Ballerina Coding Competition 2024</h4>
                 <p className="text-sm text-muted-foreground">Competed at the national level</p>
               </CardContent>
             </Card>
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
+            <Card className="text-center hover:shadow-lg transition-all duration-300 card-enhanced card-shimmer">
               <CardContent className="p-6">
                 <h4 className="font-semibold mb-2">MoraXtreme 9.0</h4>
                 <p className="text-sm text-muted-foreground">12-hour university-wide hackathon</p>
               </CardContent>
             </Card>
-            <Card className="text-center hover:shadow-lg transition-all duration-300">
+            <Card className="text-center hover:shadow-lg transition-all duration-300 card-enhanced card-shimmer">
               <CardContent className="p-6">
                 <h4 className="font-semibold mb-2">Mathematics Teaching</h4>
                 <p className="text-sm text-muted-foreground">Volunteer educator at MoraMaths Circle</p>

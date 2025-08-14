@@ -47,45 +47,45 @@
 }
 
 .dark {
-  /* Enhanced dark theme with richer colors */
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.12 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.7 0.2 250);
-  --primary-foreground: oklch(0.08 0 0);
-  --secondary: oklch(0.18 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.18 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.75 0.2 200);
-  --accent-foreground: oklch(0.08 0 0);
+  /* Enhanced dark theme with better component separation */
+  --background: oklch(0.03 0 0);
+  --foreground: oklch(0.97 0 0);
+  --card: oklch(0.08 0.01 250);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.08 0.01 250);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.65 0.2 250);
+  --primary-foreground: oklch(0.03 0 0);
+  --secondary: oklch(0.12 0.02 250);
+  --secondary-foreground: oklch(0.85 0 0);
+  --muted: oklch(0.06 0.005 250);
+  --muted-foreground: oklch(0.55 0 0);
+  --accent: oklch(0.7 0.2 200);
+  --accent-foreground: oklch(0.03 0 0);
   /* Enhanced gradient colors for dark mode */
-  --gradient-start: oklch(0.7 0.2 250);
-  --gradient-middle: oklch(0.65 0.15 280);
-  --gradient-end: oklch(0.75 0.2 200);
-  --success: oklch(0.7 0.15 150);
-  --warning: oklch(0.8 0.2 60);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.2 0 0);
-  --input: oklch(0.2 0 0);
-  --ring: oklch(0.439 0 0);
+  --gradient-start: oklch(0.65 0.2 250);
+  --gradient-middle: oklch(0.6 0.16 280);
+  --gradient-end: oklch(0.7 0.2 200);
+  --success: oklch(0.65 0.16 150);
+  --warning: oklch(0.75 0.2 60);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.97 0 0);
+  --border: oklch(0.25 0.02 250);
+  --input: oklch(0.12 0.02 250);
+  --ring: oklch(0.65 0.2 250);
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.12 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.18 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.2 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: oklch(0.08 0.01 250);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.65 0.2 250);
+  --sidebar-primary-foreground: oklch(0.03 0 0);
+  --sidebar-accent: oklch(0.12 0.02 250);
+  --sidebar-accent-foreground: oklch(0.85 0 0);
+  --sidebar-border: oklch(0.25 0.02 250);
+  --sidebar-ring: oklch(0.65 0.2 250);
 }
 
 @theme inline {
@@ -333,6 +333,225 @@
 }
 
 .dark .glass {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 2px solid var(--border);
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.8),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.dark .glass:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary)/50;
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.9),
+    0 0 0 1px var(--primary)/25,
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Enhanced card styles for dark mode */
+.card-enhanced {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .card-enhanced {
+  background: linear-gradient(135deg, var(--card) 0%, var(--secondary)/20 100%);
+  border: 2px solid var(--border);
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.8),
+    0 4px 10px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark .card-enhanced::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.03) 50%, transparent 100%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.dark .card-enhanced:hover {
+  border-color: var(--primary)/60;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.9),
+    0 8px 16px rgba(0, 0, 0, 0.7),
+    0 0 0 1px var(--primary)/20,
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.dark .card-enhanced:hover::before {
+  opacity: 1;
+}
+
+.card-glow {
+  position: relative;
+}
+
+.dark .card-glow::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--color-primary)/30, transparent, var(--color-accent)/30);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark .card-glow:hover::after {
+  opacity: 1;
+}
+
+/* Improved section backgrounds for dark mode */
+.dark [data-section="projects"] {
+  background: linear-gradient(135deg, var(--background) 0%, var(--muted)/50 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.dark [data-section="skills"] {
+  background: linear-gradient(135deg, var(--muted)/30 0%, var(--background) 50%, var(--muted)/20 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Add spacing between sections */
+.dark section {
+  margin-bottom: 2rem;
+}
+
+/* Enhanced component separation */
+.dark .component-separator {
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* Card container improvements */
+.dark .card-container {
+  gap: 2rem !important;
+}
+
+/* Better text contrast in cards */
+.dark .card-enhanced h1,
+.dark .card-enhanced h2,
+.dark .card-enhanced h3,
+.dark .card-enhanced h4,
+.dark .card-enhanced h5,
+.dark .card-enhanced h6 {
+  color: var(--card-foreground);
+  font-weight: 600;
+}
+
+.dark .card-enhanced p {
+  color: var(--muted-foreground);
+  line-height: 1.6;
+}
+
+/* Better badge contrast in dark mode */
+.dark .badge-enhanced {
+  background: var(--secondary);
+  color: var(--secondary-foreground);
+  border: 1px solid var(--border);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dark .badge-enhanced:hover {
+  background: var(--primary)/25;
+  border-color: var(--primary)/60;
+  color: var(--primary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Shimmer effect for dark mode cards */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.card-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .card-shimmer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transform: translateX(-100%);
+  animation: shimmer 3s infinite;
+  pointer-events: none;
+}
+
+.dark .card-shimmer:hover::before {
+  animation-duration: 1.5s;
+}
+
+/* Enhanced focus and accessibility styles for dark mode */
+.dark .card-enhanced:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.dark .card-enhanced:focus-within::after {
+  opacity: 1;
+}
+
+/* Subtle gradient overlay for better depth perception */
+.dark .card-depth {
+  background: linear-gradient(
+    135deg,
+    var(--card) 0%,
+    var(--secondary)/30 100%
+  );
+  border: 2px solid var(--border);
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.dark .card-depth:hover {
+  background: linear-gradient(
+    135deg,
+    var(--card) 0%,
+    var(--primary)/8 50%,
+    var(--secondary)/25 100%
+  );
+  border-color: var(--primary)/40;
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.8),
+    0 0 0 1px var(--primary)/20,
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }

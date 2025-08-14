@@ -15,7 +15,7 @@ export function ExperienceSection() {
           </p>
         </div>
 
-        <Card className="group hover:shadow-lg transition-all duration-300">
+        <Card className="group hover:shadow-lg transition-all duration-300 card-enhanced card-glow card-shimmer card-depth">
           <CardHeader>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
