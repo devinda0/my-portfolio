@@ -23,7 +23,7 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden" aria-label="Hero Section">
+    <section id="hero" className="min-h-screen flex items-start sm:items-center justify-center relative overflow-hidden pt-20 sm:pt-16 md:pt-0" aria-label="Hero Section">
       {/* Enhanced Background Animation with mixed colors */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-primary opacity-20 rounded-full blur-3xl animate-float"></div>
@@ -41,15 +41,15 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 sm:py-16 md:py-20 mt-12 sm:mt-8 md:mt-0">
         <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in-up" : "opacity-0"}`}>
           {/* Enhanced Profile Image with glow effect */}
-          <div className="mb-8 animate-scale-in animate-delay-200">
+          <div className="mb-6 sm:mb-6 md:mb-8 mt-4 sm:mt-2 md:mt-0 animate-scale-in animate-delay-200">
             <div className="relative inline-block">
               <img
                 src="/my-circle.png"
                 alt="Devinda Dilshan - Computer Science Student and Software Engineer"
-                className="w-48 h-48 rounded-full mx-auto border-4 border-primary/30 shadow-2xl hover-lift animate-pulse-glow"
+                className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-full mx-auto border-4 border-primary/30 shadow-2xl hover-lift animate-pulse-glow"
                 width={192}
                 height={192}
                 loading="eager"
@@ -59,11 +59,11 @@ export function HeroSection() {
           </div>
 
           {/* Enhanced title with mixed gradient */}
-          <h1 className="font-serif text-4xl md:text-6xl font-bold mb-6 text-gradient animate-fade-in-up animate-delay-300">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-6xl font-bold mb-4 sm:mb-6 text-gradient animate-fade-in-up animate-delay-300">
             Devinda Dilshan
           </h1>
 
-          <h2 className="text-xl md:text-2xl text-muted-foreground mb-8 font-medium animate-fade-in-up animate-delay-400">
+          <h2 className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-6 sm:mb-8 font-medium animate-fade-in-up animate-delay-400">
             <span className="bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-success)] bg-clip-text text-transparent">
               Software Engineer
             </span>{" "}
@@ -73,7 +73,7 @@ export function HeroSection() {
             </span>
           </h2>
 
-          <p className="text-lg md:text-xl text-foreground/80 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-500">
+          <p className="text-base sm:text-lg md:text-xl text-foreground/80 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-500">
             A motivated and detail-oriented Computer Science & Engineering undergraduate at the
             <span className="text-primary font-semibold hover:text-accent transition-colors duration-300">
               {" "}
@@ -93,7 +93,7 @@ export function HeroSection() {
           </p>
 
           {/* Enhanced buttons with mixed colors */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up animate-delay-600">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8 sm:mb-10 md:mb-12 animate-fade-in-up animate-delay-600">
             <Button
               size="lg"
               className="group bg-gradient-primary hover:shadow-lg hover:shadow-primary/25 hover:scale-105 transition-all duration-300 cursor-pointer"
