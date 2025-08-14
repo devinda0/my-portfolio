@@ -23,9 +23,9 @@ export function HeroSection() {
   }
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden" aria-label="Hero Section">
       {/* Enhanced Background Animation with mixed colors */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10" aria-hidden="true">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-primary opacity-20 rounded-full blur-3xl animate-float"></div>
         <div
           className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-accent opacity-15 rounded-full blur-3xl animate-float"
@@ -48,8 +48,11 @@ export function HeroSection() {
             <div className="relative inline-block">
               <img
                 src="/my-circle.png"
-                alt="Devinda Dilshan"
+                alt="Devinda Dilshan - Computer Science Student and Software Engineer"
                 className="w-48 h-48 rounded-full mx-auto border-4 border-primary/30 shadow-2xl hover-lift animate-pulse-glow"
+                width={192}
+                height={192}
+                loading="eager"
               />
               <div className="absolute inset-0 rounded-full bg-gradient-primary opacity-20 animate-gradient"></div>
             </div>
@@ -101,7 +104,7 @@ export function HeroSection() {
                 <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform duration-300" />
               </span>
             </Button>
-            <a href="/resume.pdf" download>
+            <a href="/Devinda_Resume.pdf" download>
               <Button
                 variant="outline"
                 size="lg"
