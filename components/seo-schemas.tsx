@@ -29,7 +29,12 @@ export function PersonSchema({
     "name": name,
     "jobTitle": jobTitle,
     "description": description,
-    "image": image,
+    "image": {
+      "@type": "ImageObject",
+      "url": image,
+      "width": 400,
+      "height": 400
+    },
     "url": url,
     "sameAs": [
       linkedin,
@@ -37,11 +42,20 @@ export function PersonSchema({
     ].filter(Boolean),
     "email": email,
     "alumniOf": {
-      "@type": "University",
+      "@type": "EducationalOrganization",
       "name": university,
-      "url": "https://uom.lk/"
+      "url": "https://uom.lk/",
+      "sameAs": "https://en.wikipedia.org/wiki/University_of_Moratuwa"
     },
     "knowsAbout": skills,
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": jobTitle,
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "Sri Lanka"
+      }
+    },
     "workLocation": {
       "@type": "Place",
       "name": "Sri Lanka"
@@ -49,6 +63,10 @@ export function PersonSchema({
     "nationality": {
       "@type": "Country",
       "name": "Sri Lanka"
+    },
+    "worksFor": {
+      "@type": "EducationalOrganization",
+      "name": university
     }
   };
 
@@ -114,20 +132,28 @@ interface PortfolioSchemaProps {
 export function PortfolioSchema({ name, description, url, author, skills, projects }: PortfolioSchemaProps) {
   const structuredData = {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
+    "@type": ["CreativeWork", "WebSite"],
     "name": name,
     "description": description,
     "url": url,
     "author": {
       "@type": "Person",
       "name": author,
-      "knowsAbout": skills
+      "knowsAbout": skills,
+      "url": url
     },
+    "publisher": {
+      "@type": "Person",
+      "name": author
+    },
+    "inLanguage": "en-US",
+    "dateCreated": "2024",
+    "dateModified": new Date().toISOString().split('T')[0],
     "about": skills.map(skill => ({
       "@type": "Thing",
       "name": skill
     })),
-    "hasPart": projects.map(project => ({
+    "mentions": projects.map(project => ({
       "@type": "SoftwareApplication",
       "name": project.name,
       "description": project.description,
@@ -137,8 +163,15 @@ export function PortfolioSchema({ name, description, url, author, skills, projec
       "author": {
         "@type": "Person", 
         "name": author
-      }
-    }))
+      },
+      "operatingSystem": "Web Browser",
+      "softwareVersion": "1.0"
+    })),
+    "mainEntity": {
+      "@type": "Person",
+      "name": author,
+      "jobTitle": "Software Engineer & Computer Science Student"
+    }
   };
 
   return (

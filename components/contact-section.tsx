@@ -18,7 +18,7 @@ export function ContactSection() {
     email: "",
     message: "",
   })
-  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM_ID || '')
+  const [state, handleSubmit] = useForm(process.env.NEXT_PUBLIC_FORM_ID || 'demo')
   const [showSuccessDialog, setShowSuccessDialog] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

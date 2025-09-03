@@ -137,6 +137,9 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
+      react-gtag:
+        specifier: ^0.0.0
+        version: 0.0.0
       react-hook-form:
         specifier: ^7.60.0
         version: 7.62.0(react@18.3.1)
@@ -1562,6 +1565,9 @@ packages:
     resolution: {integrity: sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==}
     peerDependencies:
       react: ^18.3.1
+
+  react-gtag@0.0.0:
+    resolution: {integrity: sha512-Acob0OX3J9CS22LyWnH3Pd6V5Qkj9dX0fKne4yv2bUosfNJHch4WpLXfOzLGu3JIq+U+pCIOkpH9hbfuiH0Gqg==}
 
   react-hook-form@7.62.0:
     resolution: {integrity: sha512-7KWFejc98xqG/F4bAxpL41NB3o1nnvQO1RWZT3TqRZYL8RryQETGfEdVnJN2fy1crCiBLLjkRBVK05j24FxJGA==}
@@ -3064,6 +3070,8 @@ snapshots:
       loose-envify: 1.4.0
       react: 18.3.1
       scheduler: 0.23.2
+
+  react-gtag@0.0.0: {}
 
   react-hook-form@7.62.0(react@18.3.1):
     dependencies:

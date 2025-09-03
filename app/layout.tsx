@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Playfair_Display, Source_Sans_3 as Source_Sans_Pro } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { PersonSchema, WebsiteSchema } from "@/components/seo-schemas"
+import { GoogleAnalytics } from "@/components/google-analytics"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -55,6 +56,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification code
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
@@ -79,6 +83,14 @@ export const metadata: Metadata = {
       }
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Devinda Dilshan - Software Engineer & Computer Science Student',
+    description: 'Computer Science & Engineering undergraduate at University of Moratuwa. Skilled in Full-Stack Development, Machine Learning, and modern web technologies.',
+    images: ['/my-full.jpeg'],
+    creator: '@devindadilshan', // Add your Twitter handle if you have one
+    site: '@devindadilshan',
+  },
   robots: {
     index: true,
     follow: true,
@@ -96,6 +108,9 @@ export const metadata: Metadata = {
     canonical: 'https://devinda-dilshan.dev',
   },
   category: 'technology',
+  other: {
+    'google-site-verification': 'your-google-verification-code', // Duplicate for better compatibility
+  },
 }
 
 export default function RootLayout({
@@ -130,10 +145,23 @@ export default function RootLayout({
         />
         <link rel="canonical" href="https://devinda-dilshan.dev" />
         <link rel="manifest" href="/manifest.json" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
         <meta name="theme-color" content="#0EA5E9" />
         <meta name="msapplication-TileColor" content="#0EA5E9" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Devinda Dilshan" />
+        <meta name="application-name" content="Devinda Dilshan Portfolio" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
       </head>
       <body className="font-sans">
+        <GoogleAnalytics />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
           {children}
         </ThemeProvider>

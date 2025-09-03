@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NEXT_PUBLIC_FORM_ID: ${{ secrets.NEXT_PUBLIC_FORM_ID }}
+      NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
     steps:
       - uses: actions/checkout@v4
       - run: npm install
