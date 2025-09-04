@@ -4,6 +4,7 @@ import { Playfair_Display, Source_Sans_3 as Source_Sans_Pro } from "next/font/go
 import { ThemeProvider } from "@/components/theme-provider"
 import { PersonSchema, WebsiteSchema } from "@/components/seo-schemas"
 import { GoogleAnalytics } from "@/components/google-analytics"
+import SplashCursor from "@/components/reactbits/splash-cursor"
 import "./globals.css"
 
 const playfair = Playfair_Display({
@@ -162,6 +163,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans">
         <GoogleAnalytics />
+        <SplashCursor />
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange={false}>
           {children}
         </ThemeProvider>

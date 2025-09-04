@@ -1,13 +1,12 @@
 import { Navigation } from "@/components/navigation"
-import { HeroSection } from "@/components/hero-section"
-import { AboutSection } from "@/components/about-section"
+import AestheticPremiumHero from '@/components/aesthetic-premium-hero';
+import ProjectsUltimate from '@/components/projects-ultimate';
+import PremiumAboutSection from '@/components/premium-about-section';
 import { ExperienceSection } from "@/components/experience-section"
-import { ProjectsSection } from "@/components/projects-section"
-import { SkillsSection } from "@/components/skills-section"
+import PremiumSkillsSection from '@/components/premium-skills-section';
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
 import { PortfolioSchema } from "@/components/seo-schemas"
-import { Code, Database, Gamepad2, Monitor, Server } from "lucide-react"
 
 export default function Home() {
   // Example projects data - customize with your actual projects
@@ -18,7 +17,7 @@ export default function Home() {
       description:
         "Developed a complete interpreter for the RPAL (Recursive Programming and Applicative Language) from the ground up, demonstrating a practical application of compiler theory and language processing fundamentals.",
       technologies: ["Python", "OOP", "Data Structures", "Algorithms"],
-      icon: Code,
+      icon: "Code",
       year: "2025",
       category: "Compiler Design",
       link:"https://github.com/devinda0/RPAL-Compiler.git",
@@ -30,7 +29,7 @@ export default function Home() {
       description:
         "A comprehensive train scheduling management system showcasing modern application development by integrating Ballerina for the backend with React.js for the frontend, featuring secure admin controls.",
       technologies: ["Ballerina", "React.js", "MongoDB"],
-      icon: Database,
+      icon: "Database",
       year: "2024",
       category: "Full-Stack Web Application",
       link: "https://github.com/devinda0/Online_Train_Ticket_Booking_System.git",
@@ -42,7 +41,7 @@ export default function Home() {
       description:
         "Contributed to the design and implementation of a console-based role-playing game (RPG) from concept to completion as part of a development team for Object-Oriented Programming course.",
       technologies: ["Java", "OOP", "Data Structures", "Algorithms"],
-      icon: Gamepad2,
+      icon: "Gamepad2",
       year: "2024",
       category: "Game Development",
       link: "https://github.com/devinda0/Mystic-Mayhem.git",
@@ -54,7 +53,7 @@ export default function Home() {
       description:
         "Engineered a robust and secure server-side application that powers a comprehensive Human Resource Management System, responsible for all business logic, data processing, and API communications.",
       technologies: ["Express.js", "Node.js", "MySQL", "REST API"],
-      icon: Server,
+      icon: "Server",
       year: "2024",
       category: "Backend Development",
       link: "https://github.com/devinda0/HRMS-Project-Backend.git",
@@ -66,7 +65,7 @@ export default function Home() {
       description:
         "Developed a feature-rich, responsive, and intuitive front-end for a comprehensive Human Resource Management System, providing seamless user experience for HR administrators and employees.",
       technologies: ["React.js", "Tailwind CSS", "REST API"],
-      icon: Monitor,
+      icon: "Monitor",
       year: "2024",
       category: "Frontend Development",
       link: "https://github.com/devinda0/HRMS-Project-Frontend.git",
@@ -91,15 +90,17 @@ export default function Home() {
         skills={skills}
         projects={projects}
       />
-      <main className="min-h-screen">
-        <Navigation />
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <ProjectsSection />
-        <SkillsSection />
-        <ContactSection />
-        <Footer />
+      <main className="min-h-screen block">
+        <div className="flex flex-col">
+          <Navigation />
+          <AestheticPremiumHero />
+          <PremiumAboutSection />
+          <ExperienceSection />
+          <ProjectsUltimate projects={projects} />
+          <PremiumSkillsSection />
+          <ContactSection />
+          <Footer />
+        </div>
       </main>
     </>
   )
