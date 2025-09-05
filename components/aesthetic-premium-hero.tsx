@@ -223,10 +223,10 @@ function FloatingActions() {
         >
           <MagnetEnhanced magnetStrength={1} padding={5}>
             <div className="w-12 h-12 bg-gradient-to-r from-purple-600/20 to-blue-600/20 backdrop-blur-md border border-purple-500/30 rounded-full flex items-center justify-center hover:from-purple-600/40 hover:to-blue-600/40 transition-all duration-300">
-              <action.icon className="w-5 h-5 text-purple-300" />
+              <action.icon className="w-5 h-5 text-grey-800 dark:text-purple-300" />
             </div>
           </MagnetEnhanced>
-          <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-md text-sm text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+          <div className="absolute right-16 top-1/2 -translate-y-1/2 bg-black/80 backdrop-blur-sm px-3 py-1 rounded-md text-sm text-grey-800 dark:text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
             {action.label}
           </div>
         </motion.a>
@@ -420,22 +420,25 @@ export default function AestheticPremiumHero() {
                 magnetStrength={1}
                 padding={5}
               >
+                <Link href={'#projects'} >
                 <Button 
                   size="lg" 
                   className="group relative bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white border-0 px-10 py-6 text-lg font-semibold shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 overflow-hidden"
                 >
-                  <span className="relative z-10 flex items-center">
+                    <span className="relative z-10 flex items-center">
                     View My Work
-                    <ExternalLink className="ml-3 w-5 h-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-                  </span>
+                    <ChevronDown className="ml-3 w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
+                    </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400/0 via-white/20 to-purple-400/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
+                </Link>
               </MagnetEnhanced>
               
               <MagnetEnhanced
                 magnetStrength={1}
                 padding={1}
               >
+                <Link href={'mailto:devindadilshan0@gmail.com'}>
                 <Button 
                   variant="outline" 
                   size="lg" 
@@ -447,6 +450,7 @@ export default function AestheticPremiumHero() {
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/10 to-purple-600/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                 </Button>
+                </Link>
               </MagnetEnhanced>
             </motion.div>
 

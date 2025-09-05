@@ -266,7 +266,7 @@ export function Navigation() {
                   <span className={`text-xs font-medium group-hover:text-primary/70 transition-colors duration-300 tracking-wide ${
                     activeSection === "hero" 
                       ? "text-white/80 dark:text-white/80" 
-                      : "text-muted-foreground dark:text-gray-300"
+                      : "text-gray-800 dark:text-gray-300"
                   }`}>
                     Tech Innovator
                   </span>
@@ -285,9 +285,9 @@ export function Navigation() {
                   <span className={`text-xs font-medium group-hover:text-primary/70 transition-colors duration-300 ${
                     activeSection === "hero" 
                       ? "text-white/80 dark:text-white/80" 
-                      : "text-muted-foreground dark:text-gray-300"
+                      : "text-gray-800 dark:text-gray-300"
                   }`}>
-                    Developer
+                    Tech Innovator
                   </span>
                 </div>
               </div>

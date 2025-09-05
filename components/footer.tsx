@@ -110,23 +110,7 @@ export function Footer() {
                 <span className="hidden sm:inline text-sm font-medium">GitHub</span>
               </a>
             </div>
-
-            {/* Divider with gradient */}
-            <div className="relative mb-8 animate-fade-in-up animate-delay-400">
-              <div className="absolute inset-0 flex items-center">
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-border to-transparent"></div>
-              </div>
-              <div className="relative flex justify-center">
-                <div className="bg-background px-4">
-                  <div className="flex items-center space-x-2 text-muted-foreground/60">
-                    <Heart className="w-4 h-4 text-red-500/70 animate-pulse" />
-                    <span className="text-xs">Made with passion</span>
-                    <Coffee className="w-4 h-4 text-amber-500/70" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
+            
             {/* Enhanced copyright with tech stack */}
             <div className="space-y-3 text-sm text-muted-foreground/80 animate-fade-in-up animate-delay-500">
               <div className="flex items-center justify-center space-x-2">

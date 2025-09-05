@@ -265,7 +265,7 @@ export default function ProjectsUltimate({ projects = [] }: ProjectsUltimateProp
                         </Button>
                       </MagnetEnhanced>
                       
-                      {project.url && (
+                      {/* {project.url && (
                         <MagnetEnhanced magnetStrength={3} padding={20}>
                           <Button
                             size="sm"
@@ -284,7 +284,7 @@ export default function ProjectsUltimate({ projects = [] }: ProjectsUltimateProp
                             </a>
                           </Button>
                         </MagnetEnhanced>
-                      )}
+                      )} */}
                     </div>
                   </CardContent>
                 </Card>
@@ -294,7 +294,7 @@ export default function ProjectsUltimate({ projects = [] }: ProjectsUltimateProp
         </motion.div>
 
         {/* View More Button */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -310,7 +310,7 @@ export default function ProjectsUltimate({ projects = [] }: ProjectsUltimateProp
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
           </MagnetEnhanced>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.section>
   );

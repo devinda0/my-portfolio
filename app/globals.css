@@ -261,7 +261,8 @@ section > div:last-child {
     @apply bg-background text-foreground transition-colors duration-300;
   }
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
+    -webkit-scroll-behavior: smooth !important;
   }
 }
 
