@@ -1,18 +1,18 @@
 'use client';
 
-import React, { useEffect, useRef, useState, Suspense } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import Link from 'next/link';
-import { ChevronDown, Download, Github, Linkedin, Mail, ExternalLink, Sparkles, Code2, Zap } from 'lucide-react';
+import { ChevronDown, Download, Github, Linkedin, Mail } from 'lucide-react';
 
 // ReactBits imports
-import Aurora from './reactbits/aurora-enhanced';
-import ParticlesEnhanced from './reactbits/particles-enhanced';
-import SplashCursor from './reactbits/splash-cursor';
-import BlobCursor from './reactbits/blob-cursor';
-import MagnetEnhanced from './reactbits/magnet-enhanced';
-import GradientText from './reactbits/gradient-text';
+import Aurora from '../reactbits/aurora-enhanced';
+import ParticlesEnhanced from '../reactbits/particles-enhanced';
+import SplashCursor from '../reactbits/splash-cursor';
+import BlobCursor from '../reactbits/blob-cursor';
+import MagnetEnhanced from '../reactbits/magnet-enhanced';
+import GradientText from '../reactbits/gradient-text';
 
 // Advanced Floating 3D Profile Image
 function Advanced3DProfile() {
@@ -93,7 +93,7 @@ function Advanced3DProfile() {
         <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-blue-400/50 to-purple-400/50 animate-spin-very-slow" />
         
         {/* Profile image container */}
-        <div className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-400 via-pink-400 to-blue-400 shadow-2xl">
+        <div className="relative w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-400 via-pink-400 to-blue-400 shadow-2xl">
           <img
             src="/my-circle.png"
             alt="Devinda - Full Stack Developer"
@@ -118,7 +118,7 @@ function Advanced3DProfile() {
           <div className="bg-gradient-to-r from-green-500/90 to-emerald-500/90 backdrop-blur-md px-6 py-2 rounded-full border border-green-400/30 shadow-lg">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-300 rounded-full animate-pulse" />
-              <span className="text-white text-sm font-semibold">Available for Hire</span>
+              <span className="text-white text-xs md:text-sm font-semibold">Available for Hire</span>
             </div>
           </div>
         </motion.div>
@@ -183,12 +183,12 @@ function AdvancedTypingAnimation() {
         colors={['#a855f7', '#ec4899', '#3b82f6', '#8b5cf6']}
         animationSpeed={3}
         showBorder={false}
-        className="font-bold text-4xl md:text-5xl lg:text-6xl"
+        className="font-bold text-lg sm:text-4xl md:text-2xl lg:text-5xl xl:text-6xl"
       >
         {displayText}
       </GradientText>
       <motion.span 
-        className="text-purple-400 font-bold ml-1 text-5xl"
+        className="text-purple-400 font-bold ml-1 text-lg sm:text-4xl md:text-2xl lg:text-5xl xl:text-6xl"
         animate={{ opacity: [1, 0, 1] }}
         transition={{ duration: 0.8, repeat: Infinity }}
       >
@@ -208,7 +208,7 @@ function FloatingActions() {
   ];
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10">
+    <div className="fixed hidden right-6 top-1/2 -translate-y-1/2 lg:flex flex-col gap-4 z-1000">
       {actions.map((action, index) => (
         <motion.a
           key={action.label}
@@ -235,46 +235,8 @@ function FloatingActions() {
   );
 }
 
-// Simplified geometric background elements
-function GeometricElements() {
-  return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {/* Reduced number of floating geometric shapes */}
-      <motion.div
-        className="absolute top-20 left-20 w-32 h-32 border border-purple-500/10 rotate-45"
-        animate={{ 
-          rotate: [45, 405, 45],
-          scale: [1, 1.05, 1]
-        }}
-        transition={{ 
-          duration: 12, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-      />
-      
-      <motion.div
-        className="absolute bottom-32 right-32 w-24 h-24 border border-pink-500/10 rounded-full"
-        animate={{ 
-          scale: [1, 1.1, 1],
-          opacity: [0.2, 0.4, 0.2]
-        }}
-        transition={{ 
-          duration: 8, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 2
-        }}
-      />
-      
-      {/* Subtle grid pattern - reduced opacity */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.015)_1px,transparent_1px)] bg-[size:80px_80px] [mask-image:radial-gradient(ellipse_1000px_800px_at_50%_50%,black_30%,transparent_100%)]" />
-    </div>
-  );
-}
-
 // Main Hero Component
-export default function AestheticPremiumHero() {
+export default function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -330,7 +292,7 @@ export default function AestheticPremiumHero() {
 
         {/* Main Content Container - Split Layout */}
         <motion.div 
-          className="relative z-30 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center min-h-screen"
+          className="relative z-30 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 justify-start md:items-center min-h-screen"
           style={{ 
             y: smoothY, 
             opacity: smoothOpacity 
@@ -338,7 +300,7 @@ export default function AestheticPremiumHero() {
         >
           {/* Left Side - Text Content */}
           <motion.div 
-            className="space-y-8 text-left lg:pr-8"
+            className=" md:space-y-8 text-left md:pr-4 lg:pr-8"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -362,7 +324,7 @@ export default function AestheticPremiumHero() {
                     colors={['#ffffff', '#e5e7eb', '#d1d5db']}
                     animationSpeed={4}
                     showBorder={false}
-                    className="font-bold"
+                    className="font-bold text-5xl md:text-8xl xl:text-9xl"
                   >
                     Hi, I'm
                   </GradientText>
@@ -377,7 +339,7 @@ export default function AestheticPremiumHero() {
                     colors={['#a855f7', '#ec4899', '#3b82f6', '#8b5cf6']}
                     animationSpeed={2}
                     showBorder={false}
-                    className="font-bold"
+                    className="font-bold text-4xl md:text-6xl xl:text-8xl"
                   >
                     Devinda
                   </GradientText>
@@ -385,7 +347,7 @@ export default function AestheticPremiumHero() {
               </h1>
               
               <motion.div 
-                className="min-h-[4rem] flex items-center"
+                className=" hidden md:flex min-h-[1rem] lg:min-h-[4rem] items-center"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 1.2 }}
@@ -401,10 +363,10 @@ export default function AestheticPremiumHero() {
               transition={{ duration: 0.8, delay: 1.4 }}
               className="space-y-6"
             >
-              <p className="text-xl md:text-2xl text-white leading-relaxed font-bold drop-shadow-lg">
+              <p className="text-sm md:text-lg lg:text-2xl xl:5xl text-white text-center md:text-justify leading-relaxed font-bold drop-shadow-lg">
                 Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 font-semibold drop-shadow-sm">exceptional digital experiences</span> with cutting-edge technologies.
               </p>
-              <p className="text-lg font-bold text-gray-100 leading-relaxed drop-shadow-md">
+              <p className=" text-md lg:text-lg xl:text-xl font-bold hidden md:block text-gray-100 text-justify leading-relaxed drop-shadow-md">
                 Specializing in modern web development, AI/ML solutions, and immersive 3D interfaces that push the boundaries of what's possible.
               </p>
             </motion.div>
@@ -414,7 +376,7 @@ export default function AestheticPremiumHero() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.6 }}
-              className="flex flex-col sm:flex-row gap-6 pt-4"
+              className="flex flex-row justify-center md:justify-start gap-4 md:pt-4"
             >
               <MagnetEnhanced
                 magnetStrength={1}
@@ -423,7 +385,7 @@ export default function AestheticPremiumHero() {
                 <Link href={'#projects'} >
                 <Button 
                   size="lg" 
-                  className="group relative bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white border-0 px-10 py-6 text-lg font-semibold shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 overflow-hidden"
+                  className="group px-4 py-2 md:px-8 md:py-4 lg:px-10 lg:py-6 xl:px-12 xl:py-8 text-xs md:text-md lg:text-lg xl:text-xl relative bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white border-0 font-semibold shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 overflow-hidden"
                 >
                     <span className="relative z-10 flex items-center">
                     View My Work
@@ -442,7 +404,7 @@ export default function AestheticPremiumHero() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group relative border-2 dark:bg-gray-100 hover:dark:bg-purple-300/50 border-purple-500/50 text-purple-600 hover:bg-purple-300/50 hover:border-purple-600 hover:text-white px-10 py-6 text-lg font-semibold transition-all duration-500 backdrop-blur-md overflow-hidden"
+                  className="group px-4 py-2 md:px-8 md:py-4 lg:px-10 lg:py-6 text-xs md:text-md lg:text-lg xl:px-12 xl:py-8 xl:text-xl relative border-2 dark:bg-gray-100 hover:dark:bg-purple-300/50 border-purple-500/50 text-purple-600 hover:bg-purple-300/50 hover:border-purple-600 hover:text-white font-semibold transition-all duration-500 backdrop-blur-md overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center">
                     Get In Touch
@@ -459,14 +421,14 @@ export default function AestheticPremiumHero() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.8 }}
-              className="pt-8"
+              className="pt-8 hidden xl:block"
             >
-              <p className="text-sm text-gray-100 mb-4 font-bold drop-shadow-sm">Trusted technologies</p>
+              <p className="text-lg text-bold text-gray-100 mb-4 font-bold drop-shadow-sm">Trusted technologies</p>
               <div className="flex flex-wrap gap-4">
                 {['React', 'TypeScript', 'Node.js', 'Python', 'Three.js', 'AI/ML'].map((tech, index) => (
                   <motion.div
                     key={tech}
-                    className="px-4 py-2 bg-gradient-to-r from-purple-600/40 to-pink-600/70 hover:scale-[1.05] border border-purple-400/30 rounded-full text-sm text-purple-200 backdrop-blur-md shadow-lg"
+                    className="px-4 py-2 text-sm text-bold bg-gradient-to-r from-purple-600/40 to-pink-600/70 hover:scale-[1.05] border border-purple-400/30 rounded-full text-purple-200 backdrop-blur-md shadow-lg"
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 2 + index * 0.1 }}
@@ -481,7 +443,7 @@ export default function AestheticPremiumHero() {
 
           {/* Right Side - Advanced 3D Profile */}
           <motion.div 
-            className="relative h-screen flex items-center justify-center lg:justify-end"
+            className="relative order-first translate-y-15 md:order-2 md:h-screen flex items-center justify-center md:justify-end"
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1.2, delay: 0.8 }}

@@ -2,11 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Button } from '@/components/ui/button';
-import { Download, Award, Target, Heart, Zap } from 'lucide-react';
-import GradientText from '@/components/reactbits/gradient-text';
-import Magnet from '@/components/reactbits/magnet';
-import Particles from '@/components/reactbits/particles';
+import { Button } from '../ui/button';
+import { Award, Target, Heart, Zap } from 'lucide-react';
+import GradientText from '../reactbits/gradient-text';
+import Magnet from '../reactbits/magnet';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -62,7 +61,7 @@ const timeline = [
 ];
 
 
-export default function PremiumAboutSection() {
+export default function AboutSection() {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: false,

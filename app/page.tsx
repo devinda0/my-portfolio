@@ -1,12 +1,12 @@
-import { Navigation } from "@/components/navigation"
-import AestheticPremiumHero from '@/components/aesthetic-premium-hero';
-import ProjectsUltimate from '@/components/projects-ultimate';
-import PremiumAboutSection from '@/components/premium-about-section';
-import { ExperienceSection } from "@/components/experience-section"
-import PremiumSkillsSection from '@/components/premium-skills-section';
-import { ContactSection } from "@/components/contact-section"
-import { Footer } from "@/components/footer"
-import { PortfolioSchema } from "@/components/seo-schemas"
+import { Navigation } from "@/components/layout/navigation"
+import HeroSection from '@/components/sections/hero-section';
+import ProjectsSection from '@/components/sections/projects-section';
+import AboutSection from '@/components/sections/about-section';
+import { ExperienceSection } from "@/components/sections/experience-section"
+import SkillsSection from '@/components/sections/skills-section';
+import { ContactSection } from "@/components/sections/contact-section"
+import { Footer } from "@/components/layout/footer"
+import { PortfolioSchema } from "@/components/seo/seo-schemas"
 
 export default function Home() {
   // Example projects data - customize with your actual projects
@@ -93,11 +93,11 @@ export default function Home() {
       <main className="min-h-screen block">
         <div className="flex flex-col">
           <Navigation />
-          <AestheticPremiumHero />
-          <PremiumAboutSection />
+          <HeroSection />
+          <AboutSection />
           <ExperienceSection />
-          <ProjectsUltimate projects={projects} />
-          <PremiumSkillsSection />
+          <ProjectsSection projects={projects} />
+          <SkillsSection />
           <ContactSection />
           <Footer />
         </div>

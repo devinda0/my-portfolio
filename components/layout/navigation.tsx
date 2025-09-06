@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "../ui/button"
 import { Moon, Sun, Menu, X, Home, Download } from "lucide-react"
 import { useTheme } from "next-themes"
 import { gsap } from "gsap"

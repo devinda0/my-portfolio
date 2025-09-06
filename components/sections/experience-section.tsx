@@ -2,12 +2,11 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
+import { Badge } from "../ui/badge"
 import { Calendar, MapPin, Building, Award, Users, Code, Rocket } from "lucide-react"
-import GradientText from '@/components/reactbits/gradient-text';
-import Particles from '@/components/reactbits/particles';
-import Magnet from '@/components/reactbits/magnet';
+import GradientText from '../reactbits/gradient-text';
+import Magnet from '../reactbits/magnet';
 
 export function ExperienceSection() {
   const [ref, inView] = useInView({

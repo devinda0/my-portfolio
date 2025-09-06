@@ -1,9 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Playfair_Display, Source_Sans_3 as Source_Sans_Pro } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
-import { PersonSchema, WebsiteSchema } from "@/components/seo-schemas"
-import { GoogleAnalytics } from "@/components/google-analytics"
+import { ThemeProvider } from "@/components/layout/theme-provider"
+import { PersonSchema, WebsiteSchema } from "@/components/seo/seo-schemas"
+import { GoogleAnalytics } from "@/components/seo/google-analytics"
 import SplashCursor from "@/components/reactbits/splash-cursor"
 import "./globals.css"
 

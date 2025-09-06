@@ -2,13 +2,12 @@
 
 import React, { useRef, useState } from 'react';
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
-import MagnetEnhanced from './reactbits/magnet-enhanced';
-import ParticlesEnhanced from './reactbits/particles-enhanced';
-import Aurora from './reactbits/aurora-enhanced';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { ExternalLink, Github, ArrowRight, Calendar, Tag, Code, Database, Gamepad2, Monitor, Server } from 'lucide-react';
+import MagnetEnhanced from '../reactbits/magnet-enhanced';
+import ParticlesEnhanced from '../reactbits/particles-enhanced';
+import { Button } from '../ui/button';
+import { Badge } from '../ui/badge';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../ui/card';
+import { Github, Calendar, Tag, Code, Database, Gamepad2, Monitor, Server } from 'lucide-react';
 
 interface Project {
   title: string;
@@ -34,7 +33,7 @@ const iconMap = {
   Server,
 };
 
-export default function ProjectsUltimate({ projects = [] }: ProjectsUltimateProps) {
+export default function ProjectsSection({ projects = [] }: ProjectsUltimateProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);

@@ -3,19 +3,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import GradientText from '@/components/reactbits/gradient-text';
-import Magnet from '@/components/reactbits/magnet';
-import Particles from '@/components/reactbits/particles';
-import SpotlightCard from '@/components/reactbits/spotlight-card';
+import GradientText from '../reactbits/gradient-text';
+import SpotlightCard from '../reactbits/spotlight-card';
 import { 
   Code, 
   Database, 
-  Smartphone, 
-  Cloud, 
-  Palette, 
-  Zap,
-  Brain,
-  Globe
+  Cloud
 } from 'lucide-react';
 
 const skillCategories = [
@@ -56,7 +49,7 @@ const skillCategories = [
   },
 ];
 
-export default function PremiumSkillsSection() {
+export default function SkillsSection() {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: false,
