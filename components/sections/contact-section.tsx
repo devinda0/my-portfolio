@@ -101,7 +101,7 @@ export function ContactSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-foreground">Get In Touch</h2>
-          <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+          <p className="text-lg text-center tracking-tight text-foreground/70 max-w-2xl mx-auto">
             I'm always open to discussing new opportunities, interesting projects, or just having a chat about
             technology.
           </p>
@@ -109,10 +109,10 @@ export function ContactSection() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <div>
-              <h3 className="font-serif text-2xl font-bold mb-6 text-foreground">Let's Connect</h3>
-              <p className="text-foreground/80 mb-8 leading-relaxed">
+          <div className="space-y-8 w-full flex flex-col items-left">
+            <div className=" w-full tracking-tight">
+              <h3 className="font-serif text-3xl md:text-4xl text-center md:text-justify font-bold mb-6 text-foreground">Let's Connect</h3>
+              <p className="text-foreground/80 text-lg mb-8 leading-relaxed">
                 Whether you're looking for a passionate software engineer for your team, want to collaborate on an
                 exciting project, or simply want to discuss the latest in technology, I'd love to hear from you.
               </p>

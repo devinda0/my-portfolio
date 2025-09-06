@@ -8,6 +8,7 @@ import GradientText from '../reactbits/gradient-text';
 import Magnet from '../reactbits/magnet';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 const achievements = [
   {
@@ -66,6 +67,12 @@ export default function AboutSection() {
     threshold: 0.1,
     triggerOnce: false,
   });
+  const [displayWidth, setDisplayWidth] = useState(0);
+
+  useEffect(() => {
+    const width = window.screen.width;
+    setDisplayWidth(width);
+  },[])
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -136,7 +143,7 @@ export default function AboutSection() {
         className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         {/* Section Header */}
-        <motion.div variants={itemVariants} className="text-center mb-20">
+        <motion.div variants={itemVariants} className="text-center mb-10 md:mb-20">
           <motion.div
             animate={{ y: [-10, 10, -10] }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
@@ -158,16 +165,16 @@ export default function AboutSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:gap-16 items-center mb-20">
           {/* Image Section */}
-          <motion.div variants={itemVariants} className="relative">
+          <motion.div variants={itemVariants} className="relative flex justify-center items-center">
             <Magnet magnetStrength={3} padding={40}>
               <motion.div
                 whileHover={{ scale: 1.05, rotateY: 10, rotateX: 5 }}
                 className="relative group perspective-1000"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-cyan-500/30 rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-700 scale-110"></div>
-                <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-white/90 to-slate-100/90 dark:from-slate-700/90 dark:to-slate-800/90 border border-slate-200/50 dark:border-white/20 backdrop-blur-sm shadow-2xl" style={{ width: '100%', height: '400px' }}>
+                <div className="relative aspect-square rounded-3xl overflow-hidden bg-gradient-to-br from-white/90 to-slate-100/90 dark:from-slate-700/90 dark:to-slate-800/90 border border-slate-200/50 dark:border-white/20 backdrop-blur-sm shadow-2xl" style={{ width: '100%', height: `${displayWidth > 1024 ? 400 : 275 }px` }}>
                   <Image
                     src="/my-full.jpeg"
                     alt="Devinda Dilshan"
@@ -188,19 +195,19 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Content Section */}
-          <motion.div variants={itemVariants} className="space-y-8">
+          <motion.div variants={itemVariants} className="space-y-8 mt-15 md:mt-0">
             <div className="space-y-6">
               <GradientText 
                 colors={['#3b82f6', '#06b6d4', '#8b5cf6']}
                 animationSpeed={4}
-                className="text-3xl md:text-4xl font-bold mb-6"
+                className="text-3xl md:text-4xl text-center font-bold mb-6"
               >
                 Building the Future, One Line at a Time
               </GradientText>
               
               <motion.p 
                 whileHover={{ scale: 1.02 }}
-                className="text-lg text-slate-700 dark:text-white/90 leading-relaxed text-justify p-6 rounded-2xl bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-200/50 dark:border-white/10 hover:border-slate-300/70 dark:hover:border-white/30 transition-all duration-300"
+                className="text-lg text-slate-700 tracking-tight md:tracking-normal  dark:text-white/90 leading-relaxed text-justify p-6 rounded-2xl bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-200/50 dark:border-white/10 hover:border-slate-300/70 dark:hover:border-white/30 transition-all duration-300"
               >
                 I'm a passionate full-stack developer with more than 1 year of experience creating 
                 innovative digital solutions. My expertise spans across modern web technologies and
@@ -209,7 +216,7 @@ export default function AboutSection() {
               
               <motion.p 
                 whileHover={{ scale: 1.02 }}
-                className="text-lg text-slate-700 dark:text-white/90 leading-relaxed text-justify p-6 rounded-2xl bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-200/50 dark:border-white/10 hover:border-slate-300/70 dark:hover:border-white/30 transition-all duration-300"
+                className="text-lg text-slate-700 tracking-tight md:tracking-normal dark:text-white/90 leading-relaxed text-justify p-6 rounded-2xl bg-white/70 dark:bg-slate-800/40 backdrop-blur-sm border border-slate-200/50 dark:border-white/10 hover:border-slate-300/70 dark:hover:border-white/30 transition-all duration-300"
               >
                 When I'm not coding, you'll find me exploring new technologies, contributing to 
                 open-source projects, or sharing knowledge with the developer community through 
@@ -218,12 +225,12 @@ export default function AboutSection() {
             </div>
 
             {/* Enhanced CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div className="flex px-3 md:px-0 flex-col sm:flex-row gap-6">
               <Magnet magnetStrength={3} padding={40}>
                 <Link href="Devinda_Resume.pdf" download>
                 <Button 
                   size="lg" 
-                  className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
+                  className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 px-8 py-4 text-lg font-semibold rounded-2xl shadow-2xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-105"
                 >
                   Download CV
                 </Button>
@@ -235,7 +242,7 @@ export default function AboutSection() {
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-2 border-slate-300 dark:border-white/30 bg-white/70 dark:bg-slate-800/60 text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700/80 hover:border-slate-400 dark:hover:border-white/50 px-8 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
+                  className="border-2 w-full border-slate-300 dark:border-white/30 bg-white/70 dark:bg-slate-800/60 text-slate-700 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-700/80 hover:border-slate-400 dark:hover:border-white/50 px-8 py-4 text-lg font-semibold rounded-2xl backdrop-blur-sm transition-all duration-300 transform hover:scale-105"
                 >
                   Let's Connect
                 </Button>
@@ -313,18 +320,18 @@ export default function AboutSection() {
           
           <div className="relative">
             {/* Enhanced Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 shadow-lg"></div>
+            <div className="absolute left-10 md:left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-blue-500 via-purple-500 to-cyan-500 shadow-lg"></div>
             
             <div className="space-y-16">
               {timeline.map((item, index) => (
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className={`flex items-center ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                  className={`flex items-center flex-row-reverse ${
+                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                   }`}
                 >
-                  <div className={`w-1/2 z-20 ${index % 2 === 0 ? 'pr-12 text-right' : 'pl-12'}`}>
+                  <div className={` w-full md:w-1/2 z-20 pl-12 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12'}`}>
                     <Magnet magnetStrength={3} padding={30}>
                       <motion.div
                         whileHover={{ scale: 1.05, y: -8, rotateY: index % 2 === 0 ? 5 : -5 }}
@@ -352,7 +359,7 @@ export default function AboutSection() {
                     <Magnet magnetStrength={2} padding={15}>
                       <motion.div
                         whileHover={{ scale: 1.3, rotate: 180 }}
-                        className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-slate-200/50 dark:border-white/20 shadow-2xl backdrop-blur-sm"
+                        className="w-8 h-8 ml-6 md:ml-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 border-4 border-slate-200/50 dark:border-white/20 shadow-2xl backdrop-blur-sm"
                         style={{
                           boxShadow: '0 0 20px rgba(59, 130, 246, 0.5), 0 0 40px rgba(139, 92, 246, 0.3)'
                         }}
@@ -360,7 +367,7 @@ export default function AboutSection() {
                     </Magnet>
                   </div>
                   
-                  <div className="w-1/2"></div>
+                  <div className="w-1/2 hidden md:block"></div>
                 </motion.div>
               ))}
             </div>

@@ -140,12 +140,6 @@ export default function ProjectsSection({ projects = [] }: ProjectsUltimateProps
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <MagnetEnhanced magnetStrength={3} padding={40}>
-            <Badge className="mb-6 bg-gradient-to-r from-indigo-100 to-blue-100 dark:from-indigo-500/20 dark:to-blue-500/20 text-indigo-700 dark:text-indigo-300 border-indigo-300 dark:border-indigo-500/30">
-              🚀 Featured Work
-            </Badge>
-          </MagnetEnhanced>
-          
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400">
               Projects & 

@@ -93,7 +93,7 @@ function Advanced3DProfile() {
         <div className="absolute -inset-2 rounded-full bg-gradient-to-tr from-blue-400/50 to-purple-400/50 animate-spin-very-slow" />
         
         {/* Profile image container */}
-        <div className="relative w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-400 via-pink-400 to-blue-400 shadow-2xl">
+        <div className="relative w-48 h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-purple-400 via-pink-400 to-blue-400 shadow-2xl">
           <img
             src="/my-circle.png"
             alt="Devinda - Full Stack Developer"
@@ -183,12 +183,12 @@ function AdvancedTypingAnimation() {
         colors={['#a855f7', '#ec4899', '#3b82f6', '#8b5cf6']}
         animationSpeed={3}
         showBorder={false}
-        className="font-bold text-lg sm:text-4xl md:text-2xl lg:text-5xl xl:text-6xl"
+        className="font-bold text-lg sm:text-4xl md:text-2xl lg:text-5xl"
       >
         {displayText}
       </GradientText>
       <motion.span 
-        className="text-purple-400 font-bold ml-1 text-lg sm:text-4xl md:text-2xl lg:text-5xl xl:text-6xl"
+        className="text-purple-400 font-bold ml-1 text-lg sm:text-4xl md:text-2xl lg:text-5xl"
         animate={{ opacity: [1, 0, 1] }}
         transition={{ duration: 0.8, repeat: Infinity }}
       >
@@ -313,7 +313,7 @@ export default function HeroSection() {
               transition={{ duration: 1, delay: 0.6 }}
               className="space-y-4"
             >
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight">
+              <h1 className="text-6xl flex flex-col md:flex-row md:items-end md:gap-2 justify-start md:text-7xl lg:text-8xl font-extrabold leading-tight">
                 <motion.span 
                   className="block"
                   initial={{ x: -50, opacity: 0 }}
@@ -324,7 +324,7 @@ export default function HeroSection() {
                     colors={['#ffffff', '#e5e7eb', '#d1d5db']}
                     animationSpeed={4}
                     showBorder={false}
-                    className="font-bold text-5xl md:text-8xl xl:text-9xl"
+                    className="font-bold text-5xl md:text-8xl"
                   >
                     Hi, I'm
                   </GradientText>
@@ -339,7 +339,7 @@ export default function HeroSection() {
                     colors={['#a855f7', '#ec4899', '#3b82f6', '#8b5cf6']}
                     animationSpeed={2}
                     showBorder={false}
-                    className="font-bold text-4xl md:text-6xl xl:text-8xl"
+                    className="font-bold text-4xl md:text-7xl"
                   >
                     Devinda
                   </GradientText>
@@ -363,10 +363,10 @@ export default function HeroSection() {
               transition={{ duration: 0.8, delay: 1.4 }}
               className="space-y-6"
             >
-              <p className="text-sm md:text-lg lg:text-2xl xl:5xl text-white text-center md:text-justify leading-relaxed font-bold drop-shadow-lg">
+              <p className="text-sm md:text-lg lg:text-xl text-white text-center md:text-justify leading-relaxed font-bold drop-shadow-lg">
                 Crafting <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-pink-300 font-semibold drop-shadow-sm">exceptional digital experiences</span> with cutting-edge technologies.
               </p>
-              <p className=" text-md lg:text-lg xl:text-xl font-bold hidden md:block text-gray-100 text-justify leading-relaxed drop-shadow-md">
+              <p className=" text-sm lg:text-base hidden md:block text-gray-100 text-justify leading-relaxed drop-shadow-md">
                 Specializing in modern web development, AI/ML solutions, and immersive 3D interfaces that push the boundaries of what's possible.
               </p>
             </motion.div>
@@ -385,7 +385,7 @@ export default function HeroSection() {
                 <Link href={'#projects'} >
                 <Button 
                   size="lg" 
-                  className="group px-4 py-2 md:px-8 md:py-4 lg:px-10 lg:py-6 xl:px-12 xl:py-8 text-xs md:text-md lg:text-lg xl:text-xl relative bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white border-0 font-semibold shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 overflow-hidden"
+                  className="group px-4 py-2 md:px-8 md:py-4 lg:px-10 lg:py-6 text-xs md:text-md lg:text-lg relative bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-700 hover:via-pink-700 hover:to-blue-700 text-white border-0 font-semibold shadow-2xl hover:shadow-purple-500/30 transition-all duration-500 overflow-hidden"
                 >
                     <span className="relative z-10 flex items-center">
                     View My Work
@@ -404,7 +404,7 @@ export default function HeroSection() {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group px-4 py-2 md:px-8 md:py-4 lg:px-10 lg:py-6 text-xs md:text-md lg:text-lg xl:px-12 xl:py-8 xl:text-xl relative border-2 dark:bg-gray-100 hover:dark:bg-purple-300/50 border-purple-500/50 text-purple-600 hover:bg-purple-300/50 hover:border-purple-600 hover:text-white font-semibold transition-all duration-500 backdrop-blur-md overflow-hidden"
+                  className="group px-4 py-2 md:px-8 md:py-4 lg:px-10 lg:py-6 text-xs md:text-md lg:text-lg relative border-2 dark:bg-gray-100 hover:dark:bg-purple-300/50 border-purple-500/50 text-purple-600 hover:bg-purple-300/50 hover:border-purple-600 hover:text-white font-semibold transition-all duration-500 backdrop-blur-md overflow-hidden"
                 >
                   <span className="relative z-10 flex items-center">
                     Get In Touch
@@ -421,7 +421,7 @@ export default function HeroSection() {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.8 }}
-              className="pt-8 hidden xl:block"
+              className="pt-8 hidden lg:block"
             >
               <p className="text-lg text-bold text-gray-100 mb-4 font-bold drop-shadow-sm">Trusted technologies</p>
               <div className="flex flex-wrap gap-4">

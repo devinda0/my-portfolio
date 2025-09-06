@@ -302,7 +302,7 @@ export function Navigation() {
           </div>
 
           {/* Desktop Navigation - Enhanced Visibility */}
-          <div ref={navItemsRef} className="hidden md:flex items-center space-x-1">
+          <div ref={navItemsRef} className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => {
               const IconComponent = item.icon
               return (
@@ -433,18 +433,7 @@ export function Navigation() {
           </div>
 
           {/* Mobile Navigation - Enhanced */}
-          <div className="md:hidden flex items-center space-x-2">
-            <Button
-              onClick={handleDownloadResume}
-              size="sm"
-              className={`shadow-lg transition-all duration-300 ${
-                activeSection === "hero"
-                  ? "bg-white/20 dark:bg-white/15 hover:bg-white/30 dark:hover:bg-white/25 text-white border border-white/30 backdrop-blur-sm"
-                  : "bg-gradient-to-r from-purple-500 to-primary hover:from-purple-600 hover:to-primary/90 text-white"
-              }`}
-            >
-              <Download className="h-4 w-4" />
-            </Button>
+          <div className="lg:hidden flex items-center space-x-2">
             <Button
               variant="ghost"
               size="icon"
@@ -493,7 +482,7 @@ export function Navigation() {
         {isMobileMenuOpen && (
           <div 
             ref={mobileMenuRef}
-            className={`md:hidden overflow-hidden backdrop-blur-xl border rounded-2xl mt-2 shadow-2xl ${
+            className={`lg:hidden overflow-hidden backdrop-blur-xl border rounded-2xl mt-2 shadow-2xl ${
               activeSection === "hero"
                 ? "bg-black/80 dark:bg-black/85 border-white/20 shadow-black/20"
                 : "bg-background/95 border-border/50 shadow-primary/10"

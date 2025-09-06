@@ -106,7 +106,7 @@ export function ExperienceSection() {
                       whileHover={{ scale: 1.02 }}
                       className="space-y-2"
                     >
-                      <CardTitle className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
+                      <CardTitle className="text-2xl md:text-3xl text-center mb-2 font-bold bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 bg-clip-text text-transparent">
                         Assistant Head of Web & Tech Pillar
                       </CardTitle>
                       <div className="flex items-center gap-3 text-foreground/80 dark:text-white/80">
@@ -201,7 +201,7 @@ export function ExperienceSection() {
                 {/* Skills Developed */}
                 <motion.div 
                   variants={itemVariants}
-                  className="space-y-6 pt-8 border-t border-border/30 dark:border-white/10"
+                  className="space-y-6 hidden md:block pt-8 border-t border-border/30 dark:border-white/10"
                 >
                   <h4 className="text-xl font-semibold text-foreground dark:text-white flex items-center gap-3">
                     <Rocket className="h-5 w-5 text-purple-600 dark:text-purple-400" />
