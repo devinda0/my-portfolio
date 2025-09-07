@@ -22,7 +22,7 @@ const sourceSans = Source_Sans_Pro({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://devinda-dilshan.dev'), // Replace with your actual domain
+  metadataBase: new URL('https://devinda-dilshan.dev'), 
   title: {
     default: "Devinda Dilshan - Computer Science & Engineering Student",
     template: "%s | Devinda Dilshan"
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   verification: {
-    google: 'your-google-verification-code', // Add your Google Search Console verification code
+    google: 'your-google-verification-code',
   },
   openGraph: {
     type: 'website',
