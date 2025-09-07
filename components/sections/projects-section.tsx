@@ -195,7 +195,7 @@ export default function ProjectsSection({ projects = [] }: ProjectsUltimateProps
               onHoverEnd={() => setHoveredProject(null)}
               className="group"
             >
-              <MagnetEnhanced magnetStrength={2} padding={20}>
+              <MagnetEnhanced magnetStrength={9} padding={0}>
                 <Card className="h-full bg-gradient-to-br from-white/90 to-gray-50/90 dark:from-gray-800/50 dark:to-gray-900/50 backdrop-blur-lg border-gray-200 dark:border-gray-700/50 hover:border-indigo-400 dark:hover:border-indigo-500/50 transition-all duration-500 overflow-hidden group-hover:shadow-2xl group-hover:shadow-indigo-500/20">
                   <CardHeader className="pb-4">
                     <div className="flex items-start justify-between mb-4">
